@@ -1,1 +1,5 @@
 This project is ongoing, so the folder is still incomplete
+The "Assembly of our images.ipynb" notebook is written entirely by me, and is used to assemble 2D images spatially and temporally in order to obtain the "raw image heart movie.webm" video.
+The other 3DeeCellTracker notebooks used to segment and track nuclei have been included in the Github https://github.com/WenChentao/3DeeCellTracker/tree/master
+(some modifications have been made to the functions in order to debug the algorithm), the result of the execution of these notebooks is the video "labelled image heart movie.mp4".
+Another notebook will be added to the project to plot certain results (nuclei trajectories, volume/surface ratio over time, point clouds, migrations, ....).
