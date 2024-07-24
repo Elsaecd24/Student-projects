@@ -1,9 +1,9 @@
-The "Assembly of the z-movies.ipynb" notebook has been written entirely by me, and is used to assemble 2D images spatially and temporally in order to obtain the 3D time-lapse 
+The "Assembly of the z-movies.ipynb" notebook has been written entirely by me, and is used to assemble 2D images spatially and temporally in order to obtain the 3D time-lapse
 image showed in the video "Video Projections of 3d_with_time_heart.mp4".
 
 The "Assembly of the z-movies-LoG.ipynb " notebook has been written entirely by me, and is used to assemble 2D images spatially and temporally in order to obtain the 3Dtime-lapse 
-image showed in the video "Video Projections of 3d_with_time_heart.mp4". The main difference between this notebook and the one called "Assembly of the z-movies.ipynb" is that the
-raw image was processed with a Laplacian of Gaussian filter and the shifts between the z-movies were determined from the processed images (in the first notebook, 
+image showed in the video "Video Projections of 3d_with_time_heart.mp4". The main difference between this notebook and the one called "Assembly of the z-movies.ipynb" is that
+the raw image was processed with a Laplacian of Gaussian filter and the shifts between the z-movies were determined from the processed images (in the first notebook, 
 the shifts were determined directly from the raw images).
 The assembly with the LoG filter showed better results because the subsequent segmentation counted 310 nuclei, whereas for the assembly without the LoG filter, the segmentation
 identified 289 nuclei.
