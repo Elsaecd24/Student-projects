@@ -1,5 +1,29 @@
-This project is ongoing, so the folder is still incomplete
-The "Assembly of our images.ipynb" notebook is written entirely by me, and is used to assemble 2D images spatially and temporally in order to obtain the "raw image heart movie.webm" video.
-The other 3DeeCellTracker notebooks used to segment and track nuclei have been included in the Github https://github.com/WenChentao/3DeeCellTracker/tree/master
-(some modifications have been made to the functions in order to debug the algorithm), the result of the execution of these notebooks is the video "labelled image heart movie.mp4".
-Another notebook will be added to the project to plot certain results (nuclei trajectories, volume/surface ratio over time, point clouds, migrations, ....).
+The "Assembly of the z-movies.ipynb" notebook has been written entirely by me, and is used to assemble 2D images spatially and temporally in order to obtain the 3D time-lapse 
+image showed in the video "Video Projections of 3d_with_time_heart.mp4".
+
+The "Assembly of the z-movies-LoG.ipynb " notebook has been written entirely by me, and is used to assemble 2D images spatially and temporally in order to obtain the 3Dtime-lapse 
+image showed in the video "Video Projections of 3d_with_time_heart.mp4". The main difference between this notebook and the one called "Assembly of the z-movies.ipynb" is that the
+raw image was processed with a Laplacian of Gaussian filter and the shifts between the z-movies were determined from the processed images (in the first notebook, 
+the shifts were determined directly from the raw images).
+The assembly with the LoG filter showed better results because the subsequent segmentation counted 310 nuclei, whereas for the assembly without the LoG filter, the segmentation
+identified 289 nuclei.
+
+The 3DeeCellTracker notebooks used to segment and track nuclei come from the Github https://github.com/WenChentao/3DeeCellTracker/tree/master. 
+Some programs have been added to the notebook "3DeeCellTracker Demo - Single mode Use StarDist.ipynb" compared to Chentao Wen's notebook.
+
+The notebook "Data Analysis.ipynb" was written to analyze the data extracted from segmentation and tracking, specifically to analyze the movement and morphology of nuclei over 
+time (several metrics have been proposed). If the results are not satisfactory, another notebook called "Data Analysis-with-MAD.ipynb" has been set up to remove nuclei that 
+show anomalies (due to poor segmentation or tracking over time). It uses the Median Absolute Deviation method to identify outliers and exclude them from the calculations.
+
+Graphs using the Plotly library do not display when opening the notebook on GitHub (unlike graphs plotted with Matplotlib). Videos of the graphs related to the programs 
+in the "A - Movement of labels over time" section of the "Data Analysis.ipynb" notebook have been captured on video and uploaded to this GitHub (videos "Movement of labels
+over time (each label in different color).mp4" and "Movement of labels over time (labels classified).mp4").
+
+If you would like to obtain videos of the 3D trajectory and velocity graphs, please contact me and I will send them to you via transfernow.
+
+If you want to use these notebooks, please execute them in the following order:
+1) Assembly of the z-movies-LoG.ipynb
+2) 3DeeCellTracker - Train StarDist3D.ipynb
+3) 3DeeCellTracker Demo - Single mode Use StarDist.ipynb
+4) Data Analysis.ipynb
+5) Data Analysis-with-MAD.ipynb (optional)
